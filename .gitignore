@@ -1,6 +1,8 @@
 # Ignore environment files
 .env*
 
-
 # Ignore py compilation files
 **.pyc
+
+# Ignore AOC input files
+*input.txt
