@@ -8,4 +8,5 @@ Repo for holding my Advent of Code challenges. Main branch will be mostly blank 
     * Day 2 — complete
     * Day 3 — complete
     * Day 4 — complete
-    * Day 5 *in progress*
+    * Day 5 — complete
+    * Day 6 — complete
