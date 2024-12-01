@@ -6,3 +6,7 @@
 
 # Ignore AOC input files
 *input.txt
+
+# pixi environments
+.pixi
+*.egg-info

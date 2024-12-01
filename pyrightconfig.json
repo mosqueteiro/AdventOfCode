@@ -1,6 +1,0 @@
-{
-	"include": [
-		"day*"
-	],
-	"typeCheckingMode": "standard"
-}
