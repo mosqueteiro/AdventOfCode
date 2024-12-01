@@ -3,8 +3,6 @@ environments:
   default:
     channels:
     - url: https://conda.anaconda.org/conda-forge/
-    indexes:
-    - https://pypi.org/simple
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -60,7 +58,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2024b-hc8b5060_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/wcwidth-0.2.13-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xz-5.2.6-h166bdaf_0.tar.bz2
-      - pypi: .
 packages:
 - kind: conda
   name: _libgcc_mutex
@@ -93,13 +90,6 @@ packages:
   purls: []
   size: 23621
   timestamp: 1650670423406
-- kind: pypi
-  name: adventofcode
-  version: 0.1.0
-  path: .
-  sha256: 87bc8bc11831259207f480ac964d4699da870cfe4365c8a7f8e1023a5471ac9a
-  requires_python: '>=3.11'
-  editable: true
 - kind: conda
   name: asttokens
   version: 2.4.1
