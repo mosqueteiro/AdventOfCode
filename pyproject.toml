@@ -22,6 +22,8 @@ day01-test = { cmd = "ipython -i historian_hysteria.py -- --test", cwd = "day01"
 day01 = { cmd = "ipython -i historian_hysteria.py -- -f input.txt", cwd = "day01" }
 day02-test = { cmd = "ipython -i red-nosed_reports.py -- --test", cwd = "day02" }
 day02 = { cmd = "ipython -i red-nosed_reports.py -- -f input.txt", cwd = "day02" }
+day03-test = { cmd = "ipython -i mull_it_over.py -- --test", cwd = "day03" }
+day03 = { cmd = "ipython -i mull_it_over.py -- -f input.txt", cwd = "day03" }
 
 [tool.pixi.dependencies]
 ipython = ">=8.30.0,<9"
