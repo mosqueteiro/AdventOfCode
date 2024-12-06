@@ -7,6 +7,7 @@ Repo for holding my Advent of Code challenges. Main branch will be mostly blank 
     * Day 1 — complete
     * Day 2 — complete
     * Day 3 — complete
+    * Day 4 — complete
 
 * [2023](https://github.com/mosqueteiro/AdventOfCode/tree/2023)
     * Day 1 — complete
