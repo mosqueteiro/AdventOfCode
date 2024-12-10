@@ -26,6 +26,8 @@ day03-test = { cmd = "ipython -i mull_it_over.py -- --test", cwd = "day03" }
 day03 = { cmd = "ipython -i mull_it_over.py -- -f input.txt", cwd = "day03" }
 day04-test = { cmd = "ipython -i ceres_search.py -- --test", cwd = "day04" }
 day04 = { cmd = "ipython -i ceres_search.py -- -f input.txt", cwd = "day04" }
+day05-test = { cmd = "ipython -i print_queue.py -- --test", cwd = "day05" }
+day05 = { cmd = "ipython -i print_queue.py -- -f input.txt", cwd = "day05" }
 
 [tool.pixi.dependencies]
 ipython = ">=8.30.0,<9"
