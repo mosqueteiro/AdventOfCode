@@ -32,6 +32,8 @@ day06-test = { cmd = "ipython -i guard_gallivant.py -- --test", cwd = "day06" }
 day06 = { cmd = "ipython -i guard_gallivant.py -- -f input.txt", cwd = "day06" }
 day07-test = { cmd = "ipython -i bridge_repair.py -- --test", cwd = "day07" }
 day07 = { cmd = "ipython -i bridge_repair.py -- -f input.txt", cwd = "day07" }
+day08-test = { cmd = "ipython -i resonant_collinearity.py -- --test", cwd = "day08" }
+day08 = { cmd = "ipython -i resonant_collinearity.py -- -f input.txt", cwd = "day08" }
 
 [tool.pixi.dependencies]
 ipython = ">=8.30.0,<9"
