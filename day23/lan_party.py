@@ -2,7 +2,13 @@
 --- Day 23: LAN Party ---
 https://adventofcode.com/2024/day/23
 
+--------------------- Part I ---------------------
+The number of multiplayer parties with a T computer are (1411)
+Elapsed time:  0.0943366 s
 
+-------------------- Part II ---------------------
+The password is 'aq,bn,ch,dt,gu,ow,pk,qy,tv,us,yx,zg,zu'
+Elapsed time:  0.1385393 s
 """
 
 
