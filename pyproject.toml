@@ -40,6 +40,8 @@ day10-test = { cmd = "ipython -i hoof_it.py -- --test", cwd = "day10" }
 day10 = { cmd = "ipython -i hoof_it.py -- -f input.txt", cwd = "day10" }
 day22-test = { cmd = "ipython -i monkey_market.py -- --test", cwd = "day22" }
 day22 = { cmd = "ipython -i monkey_market.py -- -f input.txt", cwd = "day22" }
+day23-test = { cmd = "ipython -i lan_party.py -- --test", cwd = "day23" }
+day23 = { cmd = "ipython -i lan_party.py -- -f input.txt", cwd = "day23" }
 
 [tool.pixi.dependencies]
 ipython = ">=8.30.0,<9"
