@@ -101,7 +101,7 @@ packages:
   name: adventofcode
   version: 0.1.0
   path: .
-  sha256: 11fdad1581a7273ded7a95c6b434ef018c3030a2662a41f3220c90790bb8f93e
+  sha256: 6b2e08234218acd2d98d357928227cbd8675ee48bb18dca731535d6aad4b0ff2
   requires_python: '>=3.11'
   editable: true
 - kind: conda
