@@ -10,12 +10,14 @@ version = "0.1.0"
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/aoc_utils"]
 [tool.pixi.project]
 channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [tool.pixi.pypi-dependencies]
-# adventofcode = { path = ".", editable = true }
+adventofcode = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 day01-test = { cmd = "ipython -i historian_hysteria.py -- --test", cwd = "day01" }
