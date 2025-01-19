@@ -18,6 +18,7 @@ platforms = ["linux-64"]
 adventofcode = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+new-day = "scripts/new_day.sh"
 day01-test = { cmd = "ipython -i historian_hysteria.py -- --test", cwd = "day01" }
 day01 = { cmd = "ipython -i historian_hysteria.py -- -f input.txt", cwd = "day01" }
 day02-test = { cmd = "ipython -i red-nosed_reports.py -- --test", cwd = "day02" }
