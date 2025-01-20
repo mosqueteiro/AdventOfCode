@@ -43,6 +43,8 @@ day11-test = { cmd = "ipython -i plutonian_pebbles.py -- --test", cwd = "day11" 
 day11 = { cmd = "ipython -i plutonian_pebbles.py -- -f input.txt", cwd = "day11" }
 day12-test = { cmd = "ipython -i garden_groups.py -- --test", cwd = "day12" }
 day12 = { cmd = "ipython -i garden_groups.py -- -f input.txt", cwd = "day12" }
+day13-test = { cmd = "ipython -i claw_contraption.py -- --test", cwd = "day13" }
+day13 = { cmd = "ipython -i claw_contraption.py -- -f input.txt", cwd = "day13" }
 day22-test = { cmd = "ipython -i monkey_market.py -- --test", cwd = "day22" }
 day22 = { cmd = "ipython -i monkey_market.py -- -f input.txt", cwd = "day22" }
 day23-test = { cmd = "ipython -i lan_party.py -- --test", cwd = "day23" }
