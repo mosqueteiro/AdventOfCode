@@ -4,6 +4,10 @@
 --------------------- Part I ---------------------
 The safety factor of this room is (225521010)
 Time: 0.032529 s
+
+-------------------- Part II ---------------------
+It took 7774 s to get to the easter egg
+This took IRL  33.648112 s
 """
 
 
