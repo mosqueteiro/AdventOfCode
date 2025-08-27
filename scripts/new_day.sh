@@ -27,9 +27,11 @@ done
 
 source .env
 
+py_name="$name.py"
+
 echo "Creating directory: $day"
-mkdir "$day"
-touch "$day/$name"
+mkdir -p "$day"
+touch "$day/$py_name"
 touch "$day/example.txt"
 curl "https://adventofcode.com/2024/day/$dayN/input" -H "Cookie: $COOKIE_SECRET" -o "$day/input.txt"
 echo "Input received."
@@ -48,14 +50,14 @@ done
 
 if [ -z "$insert_line" ]; then
 	if [ -z "$prev_day" ]; then
-		TASK_HEAD=$(grep -n "tasks" $PYPROJ | cut -d: -f1)
+		TASK_HEAD=$(grep -n "[tool.pixi.tasks]" $PYPROJ | cut -d: -f1)
 		insert_line=$(( $TASK_HEAD + 1 ))
 	else
 		insert_line=$(( $prev_line + 1 ))
 	fi
 fi
 
-sed -i "${insert_line}i ${day} = { cmd = \"ipython -i $name -- -f input.txt\", cwd = \"$day\" }" $PYPROJ
-sed -i "${insert_line}i ${day}-test = { cmd = \"ipython -i $name -- --test\", cwd = \"$day\" }" $PYPROJ
+sed -i "${insert_line}i ${day} = { cmd = \"ipython -i $py_name -- -f input.txt\", cwd = \"$day\" }" $PYPROJ
+# sed -i "${insert_line}i ${day}-test = { cmd = \"ipython -i $py_name -- --test\", cwd = \"$day\" }" $PYPROJ
 echo "new pixi tasks for $day added"
 

@@ -18,7 +18,6 @@ platforms = ["linux-64"]
 adventofcode = { path = ".", editable = true }
 
 [tool.pixi.tasks]
-new-day = "scripts/new_day.sh"
 day01-test = { cmd = "ipython -i historian_hysteria.py -- --test", cwd = "day01" }
 day01 = { cmd = "ipython -i historian_hysteria.py -- -f input.txt", cwd = "day01" }
 day02-test = { cmd = "ipython -i red-nosed_reports.py -- --test", cwd = "day02" }
@@ -55,6 +54,10 @@ day22-test = { cmd = "ipython -i monkey_market.py -- --test", cwd = "day22" }
 day22 = { cmd = "ipython -i monkey_market.py -- -f input.txt", cwd = "day22" }
 day23-test = { cmd = "ipython -i lan_party.py -- --test", cwd = "day23" }
 day23 = { cmd = "ipython -i lan_party.py -- -f input.txt", cwd = "day23" }
+
+[tool.pixi.tasks.new-day]
+args = ["day", "name"]
+cmd = "scripts/new_day.sh --day {{ day }} --name {{ name }}"
 
 [tool.pixi.dependencies]
 ipython = ">=8.30.0,<9"
