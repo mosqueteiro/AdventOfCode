@@ -1,37 +1,79 @@
 # AdventOfCode
-Repo for holding my Advent of Code challenges. Main branch will be mostly blank and each year will be its own branch —or even repeat years with different languages.
+Repo for holding my Advent of Code challenges. Years are organized in directories with language subdirectories. Previous years (2023, 2024) were separated into their own branches.
 
-## Current challenges
+## Structure
+```
+/
+├── 2025/
+│   └── python/
+├── shared/
+│   ├── utils/
+│   └── templates/
+└── (config files)
+```
 
-* [2024](https://github.com/mosqueteiro/AdventOfCode/tree/2024)
-    * Day 1 — complete
-    * Day 2 — complete
-    * Day 3 — complete
-    * Day 4 — complete
-    * Day 5 — complete
-    * Day 6 __part I__
-    * Day 7 — complete
-    * Day 8 — complete
-    * Day 9 __part I__
-    * Day 10 — complete
-    * Day 11 — complete
-    * Day 12 — complete
-    * Day 13 — complete
-    * Day 14 — complete
-    * Day 15 — complete
-    * Day 16 — complete
-    * Day 17 __part I__
-    * Day 22 — complete
-    * Day 23 — complete
+## Current Challenges
 
-* [2023](https://github.com/mosqueteiro/AdventOfCode/tree/2023)
-    * Day 1 — complete
-    * Day 2 — complete
-    * Day 3 — complete
-    * Day 4 — complete
-    * Day 5 — complete
-    * Day 6 — complete
-    * Day 7 — complete
-    * Day 8 — complete
-    * Day 9 — complete
+### 2025
+| Day | Complete |
+|-----|----------|
+|     |          |
+
+### [2024](https://github.com/mosqueteiro/AdventOfCode/tree/2024)
+| Day | Complete |
+|-----|----------|
+| 1 | ⭐⭐ |
+| 2 | ⭐⭐ |
+| 3 | ⭐⭐ |
+| 4 | ⭐⭐ |
+| 5 | ⭐⭐ |
+| 6 | ⭐ |
+| 7 | ⭐⭐ |
+| 8 | ⭐⭐ |
+| 9 | ⭐ |
+| 10 | ⭐⭐ |
+| 11 | ⭐⭐ |
+| 12 | ⭐⭐ |
+| 13 | ⭐⭐ |
+| 14 | ⭐⭐ |
+| 15 | ⭐⭐ |
+| 16 | ⭐⭐ |
+| 17 | ⭐ |
+| 18 | |
+| 19 | |
+| 20 | |
+| 21 | |
+| 22 | ⭐⭐ |
+| 23 | ⭐⭐ |
+| 24 | |
+| 25 | |
+
+### [2023](https://github.com/mosqueteiro/AdventOfCode/tree/2023)
+| Day | Complete |
+|-----|----------|
+| 1 | ⭐⭐ |
+| 2 | ⭐⭐ |
+| 3 | ⭐⭐ |
+| 4 | ⭐⭐ |
+| 5 | ⭐⭐ |
+| 6 | ⭐⭐ |
+| 7 | ⭐⭐ |
+| 8 | ⭐⭐ |
+| 9 | ⭐⭐ |
+| 10 | |
+| 11 | |
+| 12 | |
+| 13 | |
+| 14 | |
+| 15 | |
+| 16 | |
+| 17 | |
+| 18 | |
+| 19 | |
+| 20 | |
+| 21 | |
+| 22 | |
+| 23 | |
+| 24 | |
+| 25 | |
 
