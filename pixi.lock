@@ -90,7 +90,7 @@ packages:
 - pypi: ./
   name: adventofcode
   version: 0.1.0
-  sha256: 2754a378bbaa64181ec1744d6f7c7eb9e308cabab3d099c04b35f58d5b7a132d
+  sha256: adf8388ee1343550ae24ae242adf10ef2da9d852d71131c7c7c10f41f65ef60d
   requires_python: '>=3.11'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/noarch/asttokens-2.4.1-pyhd8ed1ab_0.conda
