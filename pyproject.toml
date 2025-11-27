@@ -51,6 +51,8 @@ day15 = { cmd = "ipython -i warehouse_woes.py -- -f input.txt", cwd = "day15" }
 day16-test = { cmd = "ipython -i reindeer_maze.py -- --test", cwd = "day16" }
 day16 = { cmd = "ipython -i reindeer_maze.py -- -f input.txt", cwd = "day16" }
 day17 = { cmd = "ipython -i chronospatial_computer.py -- -f input.txt", cwd = "day17" }
+day19-test = { cmd = "ipython -i linen_layout.py -- --test", cwd = "day19" }
+day19 = { cmd = "ipython -i linen_layout.py -- -f input.txt", cwd = "day19" }
 day22-test = { cmd = "ipython -i monkey_market.py -- --test", cwd = "day22" }
 day22 = { cmd = "ipython -i monkey_market.py -- -f input.txt", cwd = "day22" }
 day23-test = { cmd = "ipython -i lan_party.py -- --test", cwd = "day23" }
