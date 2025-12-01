@@ -1,0 +1,66 @@
+from collections import Counter
+from pathlib import Path
+from sys import argv
+
+
+@fieldwise_init
+struct LocationLists(Copyable, Movable):
+    var left: List[Int]
+    var right: List[Int]
+
+
+def parse_file(filename: String) -> LocationLists:
+    with open(filename, "r") as f:
+        content = f.read()
+    lhs: List[Int] = []
+    rhs: List[Int] = []
+    for line in content.splitlines():
+        nums = [num for num in line.split("   ")]
+        if not nums:
+            continue
+        elif nums and len(nums) == 2:
+            lhs.append(Int(nums[0]))
+            rhs.append(Int(nums[1]))
+        else:
+            raise "Formatting issue. Wrong number of values."
+    return {lhs^, rhs^}
+
+
+def part_1(read loc_lists: LocationLists) -> Int:
+    left = loc_lists.left.copy()
+    right = loc_lists.right.copy()
+
+    sort(left)
+    sort(right)
+    sum: Int = 0
+    for i in range(len(left)):
+        sum += abs(left[i] - right[i])
+    return sum
+
+
+def part_2(read loc_lists: LocationLists) -> Int:
+    left = loc_lists.left.copy()
+    right = loc_lists.right.copy()
+
+    count = Counter[Int](right)
+
+    sum = 0
+    for coord in left:
+        sum += coord * count[coord]
+    return sum
+
+
+def main():
+    args = [arg for arg in argv()]
+    filename = args[1]
+    file = Path(filename)
+    if not file.exists():
+        raise "Input file doesn't exist."
+    loc_lists = parse_file(filename)
+    if "--part1" in args:
+        p1_ans = part_1(loc_lists)
+        print("Part I answer:", String(p1_ans))
+
+    if "--part2" in args:
+        p2_ans = part_2(loc_lists)
+        print("Part II answer: {}".format(p2_ans))
