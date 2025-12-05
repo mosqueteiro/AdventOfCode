@@ -17,7 +17,8 @@ Repo for holding my Advent of Code challenges. Years are organized in directorie
 ### 2025
 | Day | Complete |
 |-----|----------|
-| 1   | ⭐⭐       |
+| 1   | ⭐⭐     |
+| 2   | ⭐       |
 
 ### [2024](https://github.com/mosqueteiro/AdventOfCode/tree/2024)
 | Day | Complete |

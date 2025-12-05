@@ -1,0 +1,159 @@
+from pathlib import Path
+from sys import argv
+from collections import Set
+from testing import assert_true
+
+
+struct IdRange(Copyable, Movable):
+    var lower: String
+    var upper: String
+
+    def __init__(out self, lower: String, upper: String):
+        if not lower.isdigit() or not upper.isdigit():
+            raise "lower and upper must be digits"
+
+        self.lower = lower
+        self.upper = upper
+
+
+def parse_input(filename: Path) -> List[IdRange]:
+    if not filename.exists():
+        raise "File Not Found"
+    with open(filename, "r") as f:
+        raw_ranges = f.read()
+    ranges: List[IdRange] = []
+    for raw_range in raw_ranges.split(","):
+        _range = raw_range.split("-")
+        # for x in _range:
+        #     print("Piece:", x)
+        # print()
+        ranges.append(
+            IdRange(String(_range[0].strip()), String(_range[1].strip()))
+        )
+    return ranges^
+
+
+def part_1(read ranges: List[IdRange]) -> Int:
+    sum_invalid = 0
+    for _range in ranges:
+        lower = _range.lower.copy()
+        upper = _range.upper.copy()
+        if len(lower) % 2 != 0:
+            if len(lower) == len(upper):
+                continue
+            lower = "1" + "0" * len(lower)
+        bisect = len(lower) // 2
+        low_split = [Int(lower[:bisect]), Int(lower[bisect:])]
+        if len(upper) % 2 != 0:
+            upper = "9" * (len(upper) - 1)
+        bisect = len(upper) // 2
+        upp_split = [Int(upper[:bisect]), Int(upper[bisect:])]
+        if (
+            (low_split[0] > upp_split[0])
+            or upp_split[0] - low_split[0] == 0
+            and ((low_split[1] > upp_split[0]) or (upp_split[0] > upp_split[1]))
+        ):
+            print("{}-{}: Nothing to see here.\n".format(lower, upper))
+            continue
+
+        print("{}-{}:".format(lower, upper))
+        l_bound = (
+            low_split[0] + 1 if low_split[0] < low_split[1] else low_split[0]
+        )
+        u_bound = (
+            upp_split[0] + 1 if upp_split[0] <= upp_split[1] else upp_split[0]
+        )
+        for twin in range(l_bound, u_bound):
+            twinning = Int(String(twin) * 2)
+            print(" | Twinning:", twinning)
+            sum_invalid += twinning
+        print()
+
+    return sum_invalid
+
+
+def part_2(read ranges: List[IdRange]) -> Int:
+    sum_invalid = 0
+    for id_range in ranges:
+        lower = id_range.lower.copy()
+        upper = id_range.upper.copy()
+        invalid_id_set: Set[String] = {}
+        print("Range: {}-{}".format(lower, upper))
+
+        # s = len(lower) * -1 + 1
+        # e = s + (len(lower) // 2)
+        # for rev_it in range(s, e):
+        max_pat_len = len(upper) // 2 + 1
+        for pat_len in range(1, max_pat_len):
+            # pat_len = len(lower) + rev_it
+            no_pat = "1" + "0" * (pat_len - 1)
+            n_pat = len(upper) // pat_len
+
+            if len(lower) % pat_len != 0:
+                low_bound = Int(no_pat)
+            else:
+                low_pat = lower[:pat_len]
+                n_pat = len(upper) // pat_len
+                for n in range(1, n_pat):
+                    pat_n = pat_len * n
+                    if low_pat < lower[pat_n : pat_n + pat_len]:
+                        low_bound = Int(low_pat) + 1
+                        break
+                else:  # Yes, for-else
+                    low_bound = Int(low_pat)
+
+            if len(upper) % pat_len != 0:
+                up_bound = Int(no_pat)
+            elif pat_len == 1 and len(lower) != len(upper):
+                assert_true(pat_len == 1, "Should only be here for pat_len 1")
+                no_pat = "1" + "0" * pat_len
+                up_bound = Int(no_pat)
+                upp_pat = upper[:pat_len]
+                n_pat = len(lower) // pat_len
+                for n in range(1, len(upper) // pat_len):
+                    pat_n = pat_len * n
+                    if upp_pat > upper[pat_n : pat_n + pat_len]:
+                        single_up_bound = Int(upp_pat)
+                        break
+                else:
+                    single_up_bound = Int(upp_pat) + 1
+                for single_pat in range(1, single_up_bound):
+                    invalid_id_set.add(String(single_pat) * len(upper))
+            else:
+                upp_pat = upper[:pat_len]
+                up_bound = Int(upp_pat)
+                n_pat = len(upper) // pat_len
+                for n in range(1, n_pat):
+                    pat_n = pat_len * n
+                    if upp_pat > upper[pat_n : pat_n + pat_len]:
+                        break
+                else:
+                    up_bound += 1
+
+            print("P_{} Range: {}-{}".format(pat_len, low_bound, up_bound))
+            for pat in range(low_bound, up_bound):
+                invalid_id = String(pat) * n_pat
+                invalid_id_set.add(invalid_id)
+
+        for invalid_id in invalid_id_set:
+            print(" |", invalid_id)
+            sum_invalid += Int(invalid_id)
+
+    return sum_invalid
+
+
+def main():
+    args = [arg for arg in argv()]
+    filename = args[1]
+    file = Path(filename)
+    if not file.exists():
+        raise "Input file does not exist"
+    id_ranges = parse_input(file)
+
+    if "--part1" in args:
+        ans1 = part_1(id_ranges)
+        print("Part 1:", ans1)
+
+    if "--part2" in args:
+        ans2 = part_2(id_ranges)
+        print("Part 2:", ans2)
